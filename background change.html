@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>//非常的爽
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	body {
+  	 background:url("computer1.png")  no-repeat center center;   /*加载背景图*/   /* 背景图不平铺 */
+   	 background-size:cover;  /* 让背景图基于容器大小伸缩 */
+   	 background-attachment:fixed;        /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */    //此条属性必须设置否则可能无效/
+   	 background-color:white;   /* 设置背景颜色，背景图加载过程中会显示背景色 */
+    }
+    li
+    {
+    	list-style: none;
+    }
+    .mountain
+    {
+    	overflow: hidden;
+    	margin: 100px auto;
+    	background-color: #fff;
+    	width: 410px;
+    	padding-top: 3px;
+    }
+    .mountain li
+    {
+    	float: right;
+    	margin: 0 1px;
+    	cursor: pointer;
+    }
+    .mountain img
+    {
+    	width: 100px;
+    }
+	</style>
+</head>
+<body>
+	<ul class="mountain">
+		<li><img src="computer1.png"></li>
+		<li><img src="computer2.png"></li>
+		<li><img src="computer3.png"></li>
+		<li><img src="computer4.png"></li>
+	</ul>
+	<script>
+		var imgs= document.querySelector('.mountain').querySelectorAll('img');
+		for(var i=0;i<imgs.length;i++)
+		{
+			imgs[i].onclick=function()
+			{
+				document.body.style.backgroundImage= 'url(' +this.src + ')';
+			}
+		}
+	</script>
+</body>
+</html>
